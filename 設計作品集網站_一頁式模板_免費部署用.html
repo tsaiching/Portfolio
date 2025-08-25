@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>你的名字｜平面設計・社群經營・影像企劃 作品集</title>
+  <meta name="description" content="平面設計／社群經營／影像企劃作品集與履歷，包含案例研究、關鍵成效與聯絡方式。" />
+  <meta property="og:title" content="你的名字｜設計與內容企劃作品集" />
+  <meta property="og:description" content="平面設計／社群經營／影像企劃作品集與履歷。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#111827" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    /* ==== 基本樣式（可直接修改變數換風格） ==== */
+    :root{
+      --bg:#0b0c10;      /* 背景 */
+      --panel:#111827;   /* 卡片、導覽背景 */
+      --fg:#f9fafb;      /* 文字 */
+      --muted:#9ca3af;   /* 次要文字 */
+      --accent:#60a5fa;  /* 重點色 */
+      --accent-2:#22d3ee;/* 裝飾漸層 */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Noto Sans, 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(34,211,238,0.15), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 10%, rgba(96,165,250,0.2), transparent 60%),
+                  var(--bg);
+      color:var(--fg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border-radius:999px; border:1px solid #334155; text-decoration:none; font-weight:600; backdrop-filter: blur(6px);}
+    .btn.primary{background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0c10; border:none}
+    .btn:hover{transform: translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .tag{display:inline-block; padding:.2rem .6rem; border:1px solid #334155; border-radius:999px; font-size:.8rem; color:var(--muted)}
+    .section{padding:64px 0}
+    .h1{font-size:clamp(28px, 4vw, 48px); line-height:1.15; letter-spacing:.3px}
+    .h2{font-size:clamp(22px, 3vw, 32px); margin:0 0 16px}
+    .muted{color:var(--muted)}
+
+    /* ==== Header ==== */
+    header{position: sticky; top:0; z-index:50; background: rgba(17,24,39,.7); backdrop-filter: blur(8px); border-bottom:1px solid #1f2937}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none}
+    .brand .logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 8px 24px rgba(34,197,246,.25)}
+    nav ul{display:flex; gap:16px; list-style:none; padding:0; margin:0}
+    nav a{display:inline-block; padding:8px 10px; border-radius:8px; text-decoration:none; color:var(--muted)}
+    nav a:hover, nav a:focus{color:var(--fg); background:#111827}
+
+    /* ==== Hero ==== */
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center; padding:72px 0}
+    .hero .card{background:rgba(17,24,39,.7); border:1px solid #1f2937; border-radius:20px; padding:28px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 20px}
+
+    /* ==== Filters & Works Grid ==== */
+    .filters{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 24px}
+    .filters .btn{padding:.5rem .8rem}
+    .grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px}
+    .card{background:rgba(17,24,39,.7); border:1px solid #1f2937; border-radius:16px; overflow:hidden}
+    .thumb{aspect-ratio: 16/10; background:linear-gradient(135deg, rgba(96,165,250,.2), rgba(34,211,238,.15)); display:flex; align-items:center; justify-content:center; font-weight:700; color:#cbd5e1}
+    .card-body{padding:14px 14px 18px}
+    .card h3{margin:6px 0 6px; font-size:1.05rem}
+
+    /* ==== Case Study ==== */
+    .case{display:grid; grid-template-columns: 1fr; gap:16px}
+    .case .row{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    .case .panel{background:rgba(17,24,39,.7); border:1px solid #1f2937; border-radius:16px; padding:18px}
+    .metrics{width:100%; border-collapse:collapse}
+    .metrics th, .metrics td{border-bottom:1px solid #1f2937; padding:10px; text-align:left}
+
+    /* ==== About & Contact ==== */
+    .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .social{display:flex; gap:10px}
+    .social a{border:1px solid #334155; padding:.5rem .7rem; border-radius:999px; text-decoration:none; color:var(--muted)}
+
+    /* ==== Footer ==== */
+    footer{padding:40px 0; color:#9ca3af}
+
+    /* ==== Responsive ==== */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .case .row, .about-grid{grid-template-columns:1fr}
+      .nav ul{display:none}
+    }
+
+    /* 可存放追蹤碼處（如 GA/Cloudflare Analytics） */
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only">跳至主要內容</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="回到頂部">
+        <span class="logo" aria-hidden="true"></span>
+        <strong>你的名字</strong>
+      </a>
+      <nav aria-label="主選單">
+        <ul>
+          <li><a href="#works">作品</a></li>
+          <li><a href="#cases">案例研究</a></li>
+          <li><a href="#about">關於我</a></li>
+          <li><a href="#contact">聯絡</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- ===== Hero ===== -->
+    <section id="top" class="hero">
+      <div class="card">
+        <h1 class="h1">你好，我是<span style="color:var(--accent)">（你的名字）</span><br/>平面設計 × 社群經營 × 影像企劃</h1>
+        <p class="muted">我專長於品牌視覺、社群內容策略與影音腳本／分鏡，曾服務於（產業／品牌）。我用可衡量的指標把創意轉成成長：曝光、互動、轉換率與觀看時長。</p>
+        <div class="chips">
+          <span class="tag">品牌視覺</span><span class="tag">社群活動策劃</span><span class="tag">腳本與分鏡</span><span class="tag">動態圖像</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+          <a class="btn primary" href="#works">查看作品</a>
+          <a class="btn" href="mailto:you@email.com">Email 聯絡</a>
+          <a class="btn" href="./resume.pdf" download>下載 PDF 履歷</a>
+        </div>
+      </div>
+      <div class="card" aria-hidden="true">
+        <!-- 右側可放自我介紹圖片或短片縮圖 -->
+        <div class="thumb" style="border-radius:12px">你的代表圖 / 預告片縮圖</div>
+        <div class="muted" style="margin-top:12px; font-size:.9rem">提示：把 1200–1600px 寬的 JPG/WEBP 放在這裡，或嵌入一段 10–20 秒的 Reels/TikTok 精華。</div>
+      </div>
+    </section>
+
+    <!-- ===== Works ===== -->
+    <section id="works" class="section">
+      <h2 class="h2">作品精選</h2>
+      <p class="muted">以類別篩選作品卡片。點擊可跳到下方案例研究段落，或連到外部連結（Behance/YouTube/IG）。</p>
+      <div class="filters" role="tablist" aria-label="篩選作品">
+        <button class="btn" data-filter="*" role="tab" aria-selected="true">全部</button>
+        <button class="btn" data-filter="graphic" role="tab">平面設計</button>
+        <button class="btn" data-filter="social" role="tab">社群經營</button>
+        <button class="btn" data-filter="video" role="tab">影像企劃</button>
+      </div>
+
+      <div class="grid" id="workGrid">
+        <!-- 範例作品 1 -->
+        <article class="card work-item" data-cat="graphic">
+          <a href="#case-a" class="thumb" aria-label="查看案例：品牌識別升級">品牌識別升級</a>
+          <div class="card-body">
+            <h3>品牌識別升級｜（客戶名稱）</h3>
+            <p class="muted">Logo/字體系統/Key Visual／展演輸出</p>
+            <div class="chips"><span class="tag">平面設計</span><span class="tag">品牌</span></div>
+          </div>
+        </article>
+        <!-- 範例作品 2 -->
+        <article class="card work-item" data-cat="social">
+          <a href="#case-b" class="thumb" aria-label="查看案例：社群增長活動">社群增長活動</a>
+          <div class="card-body">
+            <h3>IG 增長活動｜（品牌）</h3>
+            <p class="muted">60 天追蹤數 +38%、互動率提升 2.1 倍</p>
+            <div class="chips"><span class="tag">社群經營</span><span class="tag">活動策劃</span></div>
+          </div>
+        </article>
+        <!-- 範例作品 3 -->
+        <article class="card work-item" data-cat="video">
+          <a href="#case-c" class="thumb" aria-label="查看案例：產品影片企劃">產品影片企劃</a>
+          <div class="card-body">
+            <h3>產品影片企劃｜（產業/品牌）</h3>
+            <p class="muted">腳本/分鏡/拍攝規劃/短版剪輯</p>
+            <div class="chips"><span class="tag">影像企劃</span><span class="tag">剪輯</span></div>
+          </div>
+        </article>
+        <!-- 依需求複製更多卡片 -->
+      </div>
+    </section>
+
+    <!-- ===== Case Studies ===== -->
+    <section id="cases" class="section">
+      <h2 class="h2">案例研究（可複製此架構）</h2>
+
+      <!-- Case A -->
+      <article id="case-a" class="case">
+        <div class="row">
+          <div class="panel">
+            <h3>品牌識別升級｜（客戶名稱）</h3>
+            <p class="muted">角色：主視覺設計、系統規範制定｜期間：（YYYY.MM–YYYY.MM）｜交付：Logo、字體階層、KV、應用物</p>
+            <p>背景與目標：品牌欲拓展年輕族群，需要更具活力且易於社群傳播的視覺系統。</p>
+          </div>
+          <div class="panel">
+            <h4>成效亮點</h4>
+            <table class="metrics" aria-label="成效數據">
+              <tr><th>指標</th><th>前</th><th>後</th><th>變化</th></tr>
+              <tr><td>社群互動率</td><td>1.2%</td><td>2.5%</td><td>+108%</td></tr>
+              <tr><td>品牌提及量</td><td>—</td><td>+42%</td><td>提升</td></tr>
+              <tr><td>活動參與</td><td>—</td><td>3,200</td><td>—</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>過程</h4>
+          <ol>
+            <li><strong>研究：</strong>受眾與競品盤點，收斂三組關鍵意象。</li>
+            <li><strong>概念：</strong>以（關鍵字）建立圖形語言與配色。</li>
+            <li><strong>系統化：</strong>Logo 安全距／組合規則、字體階層、版面模組。</li>
+            <li><strong>應用：</strong>社群版型、海報、簡報、展場物料。</li>
+          </ol>
+          <div class="thumb" style="margin-top:8px; border-radius:12px">放上前後對照或 KV 展開圖</div>
+        </div>
+      </article>
+
+      <!-- Case B -->
+      <article id="case-b" class="case">
+        <div class="row">
+          <div class="panel">
+            <h3>IG 增長活動｜（品牌）</h3>
+            <p class="muted">角色：活動企劃、內容製作、成效追蹤｜期間：（YYYY.MM–YYYY.MM）</p>
+            <p>目標：在新品期 60 天內提升追蹤、觸及與UGC 內容量。</p>
+          </div>
+          <div class="panel">
+            <h4>關鍵數據</h4>
+            <table class="metrics">
+              <tr><th>指標</th><th>成效</th></tr>
+              <tr><td>追蹤數</td><td>+38%</td></tr>
+              <tr><td>平均互動率</td><td>2.1×</td></tr>
+              <tr><td>Reels 平均觀看時長</td><td>+27%</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>策略與執行</h4>
+          <ul>
+            <li>內容主軸：教育（40%）／娛樂（40%）／推廣（20%）。</li>
+            <li>貼文引導：每週 3 則貼文 + 2 則 Reels，導流至活動頁。</li>
+            <li>KOL/共創：與 5 位微型創作者共製懶人包。</li>
+          </ul>
+          <div class="thumb" style="margin-top:8px; border-radius:12px">放上最佳表現貼文九宮格</div>
+        </div>
+      </article>
+
+      <!-- Case C -->
+      <article id="case-c" class="case">
+        <div class="row">
+          <div class="panel">
+            <h3>產品影片企劃｜（產業/品牌）</h3>
+            <p class="muted">角色：腳本、分鏡、剪輯監製｜片長：30–60 秒｜平台：YT/IG/抖音</p>
+            <p>任務：以短影音說清產品價值與差異，並優化前 3 秒吸睛畫面。</p>
+          </div>
+          <div class="panel">
+            <h4>片段與素材</h4>
+            <p class="muted">以下影片標籤為示意，請以實際 mp4/YouTube 連結替換。</p>
+            <video controls preload="metadata" style="width:100%; border-radius:12px; background:#0b0c10">
+              <source src="./demo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <div class="panel">
+          <h4>結果</h4>
+          <ul>
+            <li>縮圖 A/B Test：點閱率從 2.9% → 5.4%。</li>
+            <li>開場 0–3 秒留存率提升 15%。</li>
+            <li>引導頁 CTR 提升 22%。</li>
+          </ul>
+        </div>
+      </article>
+
+      <details class="panel" style="margin-top:16px">
+        <summary><strong>📋 複製這個範本來新增案例</strong></summary>
+<pre style="white-space:pre-wrap"><code>&lt;article id="case-new" class="case"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="panel"&gt;
+      &lt;h3&gt;（專案名）｜（客戶/品牌）&lt;/h3&gt;
+      &lt;p class="muted"&gt;角色：（你的職能）｜期間：（YYYY.MM–YYYY.MM）｜交付：（設計物/成品）&lt;/p&gt;
+      &lt;p&gt;背景與目標：用 2–3 句交代現況、限制與目標。&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="panel"&gt;
+      &lt;h4&gt;關鍵數據&lt;/h4&gt;
+      &lt;table class="metrics"&gt;
+        &lt;tr&gt;&lt;th&gt;指標&lt;/th&gt;&lt;th&gt;成效&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;（如互動率）&lt;/td&gt;&lt;td&gt;（數值）&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="panel"&gt;
+    &lt;h4&gt;流程（研究 → 概念 → 執行）&lt;/h4&gt;
+    &lt;p&gt;用條列與圖像說明關鍵決策與版本演進。&lt;/p&gt;
+    &lt;div class="thumb"&gt;放上圖像或前後對照&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+      </details>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="section">
+      <h2 class="h2">關於我</h2>
+      <div class="about-grid">
+        <div class="card" style="padding:18px">
+          <p>（3–5 句自我介紹）擅長把抽象的品牌價值轉譯成可傳播的視覺與內容；理解平台演算法與受眾行為，能以成效數據迭代。</p>
+          <ul>
+            <li>服務產業：科技／生活風格／餐飲…</li>
+            <li>工具：Figma、Adobe CC、CapCut/PR、Notion</li>
+            <li>語言：中文、英文（可商務溝通）</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:18px">
+          <h3 style="margin-top:0">可提供的服務</h3>
+          <ul>
+            <li>品牌視覺：Logo、KV、DM/包裝、簡報</li>
+            <li>社群經營：月度內容策略、排程、素材製作</li>
+            <li>影像企劃：腳本、分鏡、拍攝規劃、短版剪輯</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section">
+      <h2 class="h2">聯絡我</h2>
+      <p class="muted">歡迎合作與詢問，回覆時間以工作日為主。</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 18px">
+        <a class="btn primary" href="mailto:you@email.com">發信給我</a>
+        <a class="btn" href="https://www.instagram.com/你的帳號" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" href="https://www.behance.net/你的帳號" target="_blank" rel="noopener">Behance</a>
+        <a class="btn" href="https://www.youtube.com/@你的頻道" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <p class="muted">想要表單？可日後接上 Formspree／Google 表單等免後端服務。</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> 你的名字. 版權所有。</small>
+  </footer>
+
+  <script>
+    // 年份
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // 作品分類篩選
+    const buttons = document.querySelectorAll('.filters [data-filter]');
+    const items = document.querySelectorAll('.work-item');
+    buttons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        buttons.forEach(b=>b.setAttribute('aria-selected','false'));
+        btn.setAttribute('aria-selected','true');
+        const cat = btn.dataset.filter;
+        items.forEach(it=>{
+          const show = (cat==='*' || it.dataset.cat===cat);
+          it.style.display = show ? '' : 'none';
+        });
+      })
+    });
+
+    // 平滑捲動（同頁導覽）
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          const el = document.querySelector(href);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
