@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>鄭采芹｜平面設計・社群經營・影像企劃 作品集</title>
+  <meta name="description" content="平面設計／社群經營／影像企劃作品集與履歷，包含案例研究、關鍵成效與聯絡方式。" />
+  <meta property="og:title" content="鄭采芹｜設計與內容企劃作品集" />
+  <meta property="og:description" content="平面設計／社群經營／影像企劃作品集與履歷。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#111827" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    /* CSS 保留原本模板 */
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only">跳至主要內容</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="回到頂部">
+        <span class="logo" aria-hidden="true"></span>
+        <strong>鄭采芹</strong>
+      </a>
+      <nav aria-label="主選單">
+        <ul>
+          <li><a href="#works">作品</a></li>
+          <li><a href="#about">關於我</a></li>
+          <li><a href="#contact">聯絡</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section id="top" class="hero">
+      <div class="card">
+        <h1 class="h1">哈囉！我是<span style="color:var(--accent)">采芹</span><br/>政治大學廣播電視學系應屆畢業生</h1>
+        <p class="muted">我是一個親切、有責任感且喜歡挑戰新鮮事物的人，擅長在創意與執行之間找到平衡。我具備豐富的影視製作與影展實務經驗，擁有社群經營、影像後製、平面設計與劇本開發等能力，熟練操作 DaVinci Resolve、Premiere Pro、Illustrator、InDesign、Lightroom 等工具。</p>
+        <div class="chips">
+          <span class="tag">平面設計</span><span class="tag">社群經營</span><span class="tag">影像企劃</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+          <a class="btn primary" href="#works">查看作品</a>
+          <a class="btn" href="mailto:Zombbly@gmail.com">Email 聯絡</a>
+        </div>
+      </div>
+      <div class="card" aria-hidden="true">
+        <div class="thumb" style="border-radius:12px">你的代表圖 / 預告片縮圖</div>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="section">
+      <h2 class="h2">作品精選</h2>
+      <div class="grid" id="workGrid">
+        <article class="card work-item" data-cat="graphic">
+          <a href="#" class="thumb" aria-label="品牌識別升級">thumb1.jpg</a>
+          <div class="card-body">
+            <h3>品牌識別升級｜某客戶</h3>
+            <p class="muted">Logo / Key Visual / 展演輸出</p>
+          </div>
+        </article>
+        <article class="card work-item" data-cat="social">
+          <a href="#" class="thumb" aria-label="社群活動策劃">thumb2.jpg</a>
+          <div class="card-body">
+            <h3>社群活動策劃｜某品牌</h3>
+            <p class="muted">內容規劃 / 排程 / 互動設計</p>
+          </div>
+        </article>
+        <article class="card work-item" data-cat="video">
+          <a href="#" class="thumb" aria-label="影片企劃">thumb3.jpg</a>
+          <div class="card-body">
+            <h3>影片企劃｜某產品</h3>
+            <p class="muted">腳本 / 分鏡 / 剪輯監製</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2 class="h2">關於我</h2>
+      <div class="card" style="padding:18px">
+        <p>哈囉！我是采芹，政治大學廣播電視學系的應屆畢業生。我是一個親切、有責任感且喜歡挑戰新鮮事物的人，擅長在創意與執行之間找到平衡。我具備豐富的影視製作與影展實務經驗，擁有社群經營、影像後製、平面設計與劇本開發等能力。</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2 class="h2">聯絡我</h2>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 18px">
+        <a class="btn primary" href="mailto:Zombbly@gmail.com">發信給我</a>
+        <a class="btn" href="https://www.behance.net/gallery/232814623/_" target="_blank" rel="noopener">Behance</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> 鄭采芹. 版權所有。</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const buttons = document.querySelectorAll('.filters [data-filter]');
+    const items = document.querySelectorAll('.work-item');
+    buttons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        buttons.forEach(b=>b.setAttribute('aria-selected','false'));
+        btn.setAttribute('aria-selected','true');
+        const cat = btn.dataset.filter;
+        items.forEach(it=>{
+          const show = (cat==='*' || it.dataset.cat===cat);
+          it.style.display = show ? '' : 'none';
+        });
+      })
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          const el = document.querySelector(href);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
