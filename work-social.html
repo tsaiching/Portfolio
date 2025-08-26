@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>社群經營專案｜作品集</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container nav">
+    <a href="index.html" class="brand">← 返回首頁</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="h1">社群經營專案｜某平台</h1>
+      <p class="muted">粉專經營 / 行銷文案 / 活動規劃</p>
+      <img src="images/social-cover.jpg" alt="社群經營封面" style="max-width:100%; border-radius:12px; margin:20px 0;">
+    </section>
+
+    <section class="section">
+      <h2 class="h2">專案簡介</h2>
+      <p>透過社群內容經營，提升品牌互動率與曝光度，並結合活動行銷提升轉換率。</p>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">成果展示</h2>
+      <div class="grid">
+        <img src="images/social-1.jpg" alt="貼文範例1" class="card">
+        <img src="images/social-2.jpg" alt="貼文範例2" class="card">
+        <img src="images/social-3.jpg" alt="貼文範例3" class="card">
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> 鄭采芹. 版權所有。</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
