@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>平面設計專案｜作品集</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container nav">
+    <a href="index.html" class="brand">← 返回首頁</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="h1">平面設計專案｜某品牌</h1>
+      <p class="muted">Logo / Key Visual / 包裝設計</p>
+      <img src="images/graphic-cover.jpg" alt="平面設計封面" style="max-width:100%; border-radius:12px; margin:20px 0;">
+    </section>
+
+    <section class="section">
+      <h2 class="h2">專案簡介</h2>
+      <p>協助某品牌進行品牌識別升級，從 Logo 規劃到 KV 設計，以及完整的品牌應用設計。</p>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">設計成果</h2>
+      <div class="grid">
+        <img src="images/graphic-1.jpg" alt="設計稿1" class="card">
+        <img src="images/graphic-2.jpg" alt="設計稿2" class="card">
+        <img src="images/graphic-3.jpg" alt="設計稿3" class="card">
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> 鄭采芹. 版權所有。</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
