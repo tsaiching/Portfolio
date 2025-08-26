@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>影音企劃專案｜作品集</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container nav">
+    <a href="index.html" class="brand">← 返回首頁</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 class="h1">影音企劃專案｜某活動</h1>
+      <p class="muted">腳本發想 / 拍攝 / 剪輯</p>
+      <video controls style="max-width:100%; border-radius:12px; margin:20px 0;">
+        <source src="videos/sample.mp4" type="video/mp4">
+        你的瀏覽器不支援影片播放
+      </video>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">專案簡介</h2>
+      <p>這個專案包含完整的影音製作流程，從前期腳本發想到後期剪輯與特效，完整呈現活動特色。</p>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">幕後花絮</h2>
+      <div class="grid">
+        <img src="images/video-1.jpg" alt="拍攝花絮1" class="card">
+        <img src="images/video-2.jpg" alt="拍攝花絮2" class="card">
+        <img src="images/video-3.jpg" alt="拍攝花絮3" class="card">
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> 鄭采芹. 版權所有。</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
