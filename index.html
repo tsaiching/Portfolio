@@ -1,48 +1,32 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>鄭采芹｜作品集首頁</title>
-<link rel="icon" href="favicon.ico">
-<style>
-body { font-family:sans-serif; margin:0; background:#f9f9f9; color:#111; }
-header, nav ul { display:flex; gap:20px; padding:10px; background:#fff; align-items:center; }
-nav ul { list-style:none; margin:0; }
-nav a { text-decoration:none; color:#111; font-weight:500; }
-main { padding:40px; text-align:center; }
-.btn { display:inline-block; padding:10px 20px; border-radius:6px; text-decoration:none; margin:10px; }
-.primary { background:#111827; color:#fff; }
-footer { text-align:center; padding:20px; font-size:0.9rem; color:#666; }
-</style>
-</head>
-<body>
-<header>
-<nav>
-<ul>
-<li><a href="graphic.html">平面設計</a></li>
-<li><a href="social.html">社群經營</a></li>
-<li><a href="video.html">影音企劃</a></li>
-<li><a href="about.html">關於我</a></li>
-</ul>
-</nav>
-</header>
+<!-- 平面設計 (graphic) -->
+<article class="card work-item" data-cat="graphic">
+  <a href="work-graphic.html" class="thumb" aria-label="平面設計">
+    <img src="images/thumb-graphic.jpg" alt="平面設計縮圖">
+  </a>
+  <div class="card-body">
+    <h3><a href="work-graphic.html">平面設計專案｜某品牌</a></h3>
+    <p class="muted">Logo / Key Visual / 包裝設計</p>
+  </div>
+</article>
 
-<main>
-<h1>歡迎來到鄭采芹作品集</h1>
-<p>請選擇分類查看作品：</p>
-<a href="graphic.html" class="btn primary">平面設計</a>
-<a href="social.html" class="btn primary">社群經營</a>
-<a href="video.html" class="btn primary">影音企劃</a>
-<a href="about.html" class="btn">關於我</a>
-</main>
+<!-- 社群經營 (social) -->
+<article class="card work-item" data-cat="social">
+  <a href="work-social.html" class="thumb" aria-label="社群經營">
+    <img src="images/thumb-social.jpg" alt="社群經營縮圖">
+  </a>
+  <div class="card-body">
+    <h3><a href="work-social.html">社群經營專案｜某平台</a></h3>
+    <p class="muted">粉專經營 / 行銷文案 / 活動規劃</p>
+  </div>
+</article>
 
-<footer>
-© <span id="y"></span> 鄭采芹. 版權所有。
-</footer>
-
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-</body>
-</html>
+<!-- 影音企劃 (video) -->
+<article class="card work-item" data-cat="video">
+  <a href="work-video.html" class="thumb" aria-label="影音企劃">
+    <img src="images/thumb-video.jpg" alt="影音企劃縮圖">
+  </a>
+  <div class="card-body">
+    <h3><a href="work-video.html">影音企劃專案｜某活動</a></h3>
+    <p class="muted">腳本發想 / 拍攝 / 剪輯</p>
+  </div>
+</article>
